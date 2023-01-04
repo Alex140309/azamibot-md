@@ -447,6 +447,8 @@ export async function handler(chatUpdate) {
 					user.pelabuhanlvl = 0
 				if (!isNumber(user.expired))
 					user.expired = 0
+				if (!isNumber(user.spamcount))
+					user.spamcount = 0
 			} else
 				global.db.data.users[m.sender] = {
 					exp: 0,
@@ -656,6 +658,7 @@ export async function handler(chatUpdate) {
 					tambanglvl: 0,
 					pelabuhanlvl: 0,
 					expired: 0,
+					spamcount: 0,
 				}
 			let chat = global.db.data.chats[m.chat]
 			if (typeof chat !== 'object')
@@ -677,6 +680,8 @@ export async function handler(chatUpdate) {
 					chat.sPromote = ''
 				if (!('sDemote' in chat))
 					chat.sDemote = ''
+				if (!('openaitxt' in chat))
+					chat.openaitxt = ''
 				if (!('delete' in chat))
 					chat.delete = true
 				if (!('antiLink' in chat))
@@ -721,6 +726,7 @@ export async function handler(chatUpdate) {
 					sBye: '',
 					sPromote: '',
 					sDemote: '',
+					openaitxt: '',
 					delete: true,
 					antiLink: false,
 					antivirus: false,
@@ -798,6 +804,7 @@ export async function handler(chatUpdate) {
 				if (!('api' in datas)) datas.api = ''
 				if (!('imgbb' in datas)) datas.imgbb = ''
 				if (!('wgempa' in datas)) datas.wgempa = ''
+				if (!('spamcountreset' in datas)) datas.spamcountreset = 0
 				if (!('openaipc' in datas)) datas.openaipc = false
 				if (!('prems' in datas)) datas.prems = [{user: '', date: 0}]
 				if (!('rowner' in datas)) datas.rowner = []
@@ -813,6 +820,7 @@ export async function handler(chatUpdate) {
 				api: '',
 				imgbb: '',
 				wgempa: '',
+				spamcountreset: 0,
 				openaikey: '',
 				openaipc: false,
 				teksdonasi: '',
