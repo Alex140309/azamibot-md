@@ -805,6 +805,7 @@ export async function handler(chatUpdate) {
 				if (!('imgbb' in datas)) datas.imgbb = ''
 				if (!('wgempa' in datas)) datas.wgempa = ''
 				if (!('spamcountreset' in datas)) datas.spamcountreset = 0
+				if (!('spamlistmsg' in datas)) datas.spamlistmsg = null
 				if (!('openaipc' in datas)) datas.openaipc = false
 				if (!('prems' in datas)) datas.prems = [{user: '', date: 0}]
 				if (!('rowner' in datas)) datas.rowner = []
@@ -821,6 +822,7 @@ export async function handler(chatUpdate) {
 				imgbb: '',
 				wgempa: '',
 				spamcountreset: 0,
+				spamlistmsg: null,
 				openaikey: '',
 				openaipc: false,
 				teksdonasi: '',
