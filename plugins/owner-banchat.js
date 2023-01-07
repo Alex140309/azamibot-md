@@ -7,6 +7,7 @@ let handler = async (m, { text }) => {
 		let chat = global.db.data.chats[id]
 		chat.isBanned = true
 		chat.permaBan = true
+		chat.spamcount = 0
 		m.reply('Bot dalam mode nyimak.')
 	} catch (e) {
 		console.log(e)
